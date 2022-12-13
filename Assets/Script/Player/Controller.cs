@@ -6,9 +6,9 @@ public class Controller : MonoBehaviour
 {
     private float Bx, By, x, y;
     public GameObject up,down,left, right;
+    public GameObject AxisSpawnSkill;
     public float speedRun;
     public bool isTouchWall = false;
-
     private void Start()
     {
         //Bat dau ham check vi tri
@@ -36,14 +36,14 @@ public class Controller : MonoBehaviour
 
         //Huong quay va chay cua nhan vat
         if (Bx == x && By == y && animatorNum%2 == 0) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", ((int)animatorNum - 1)); }
-        else if(Bx == x && By < y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 2); }
-        else if (Bx > x && By < y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 4); }
-        else if (Bx > x && By == y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 6); }
-        else if (Bx > x && By > y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 8); }
-        else if (Bx == x && By > y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 10); }
-        else if (Bx < x && By > y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 12); }
-        else if (Bx < x && By == y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 14); }
-        else if (Bx < x && By < y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 16); }
+        else if(Bx == x && By < y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 2); AxisSpawnSkill.transform.rotation = Quaternion.Euler(0f, 0f, 0f); }
+        else if (Bx > x && By < y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 4); AxisSpawnSkill.transform.rotation = Quaternion.Euler(0f, 0f, 45f); }
+        else if (Bx > x && By == y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 6); AxisSpawnSkill.transform.rotation = Quaternion.Euler(0f, 0f, 90f); }
+        else if (Bx > x && By > y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 8); AxisSpawnSkill.transform.rotation = Quaternion.Euler(0f, 0f, 135f); }
+        else if (Bx == x && By > y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 10); AxisSpawnSkill.transform.rotation = Quaternion.Euler(0f, 0f, 180f); }
+        else if (Bx < x && By > y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 12); AxisSpawnSkill.transform.rotation = Quaternion.Euler(0f, 0f, 225f); }
+        else if (Bx < x && By == y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 14); AxisSpawnSkill.transform.rotation = Quaternion.Euler(0f, 0f, 270f); }
+        else if (Bx < x && By < y) { transform.GetChild(0).GetComponent<Animator>().SetInteger("Control-Int", 16); AxisSpawnSkill.transform.rotation = Quaternion.Euler(0f, 0f, 315f); }
     }
     //Ham check vi tri
     public void check()
