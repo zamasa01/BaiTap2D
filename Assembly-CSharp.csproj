@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
+    <Compile Include="Assets\Effects\Skill\SC_CollisionDetect.cs" />
     <Compile Include="Assets\Script\Player\AutoDestroy.cs" />
     <Compile Include="Assets\Main_Attacks.cs" />
     <Compile Include="Assets\Script\MenuControler.cs" />
@@ -95,10 +96,9 @@
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\Script\Player\Sync.cs" />
     <Compile Include="Assets\Script\RegistryCheck.cs" />
+    <Compile Include="Assets\Script\Enemy\ChestStatus.cs" />
     <Compile Include="Assets\Script\Booster\Damage.cs" />
     <Compile Include="Assets\Script\CountDown.cs" />
-    <Compile Include="Assets\Effects\Skill\SC_CollisionDetect.cs" />
-    <Compile Include="Assets\Script\Enemy\ChestStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
