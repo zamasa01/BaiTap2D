@@ -8,6 +8,7 @@ TagManager:
   - ChangeFloor
   - Wall
   - Enemy
+  - Fire_Skill
   layers:
   - Default
   - TransparentFX

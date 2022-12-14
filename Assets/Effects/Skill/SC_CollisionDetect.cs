@@ -9,10 +9,11 @@ public class SC_CollisionDetect : MonoBehaviour
     public GameObject damageTextEffect;
     private void OnParticleCollision(GameObject other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if((other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player") && other.GetComponent<Core>().hpCurrent > 0f)
         {
             int damage = Random.Range(Damage - 2, Damage + 2);
             other.GetComponent<Core>().hpCurrent -= damage;
+            other.GetComponent<Core>().heatCurrent += damage;
             GameObject TextSpawn = Instantiate(damageTextEffect, other.transform);
             TextSpawn.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = damage.ToString();
             TextSpawn.transform.rotation = Quaternion.Euler(0, 0, 0);

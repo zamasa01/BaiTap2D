@@ -5,18 +5,40 @@ using UnityEngine.UI;
 
 public class ChestStatus : MonoBehaviour
 {
-    public Slider hpSlider;
-    public Slider manaSlider;
+    public float hpCurrent, heatCurrent;
+    public GameObject closeImage, openImage, canvasHpheat, fireEffect;
     private void Start()
     {
         transform.GetComponent<Core>().manaCurrent = 0f;
         transform.GetComponent<Core>().manaRestorePerSecond = -1;
-
-        hpSlider = transform.GetComponent<Core>().hpSlider;
-        manaSlider = transform.GetComponent<Core>().manaSlider;
     }
     private void Update()
     {
-        
+
+
+        //Update HP and Mana realtime
+        hpCurrent = transform.GetComponent<Core>().hpCurrent;
+        heatCurrent = transform.GetComponent<Core>().manaCurrent;
+
+        //Chest Open
+        if(hpCurrent <= 0f && heatCurrent < 100f)
+        {
+            openChestNormal();
+        }
+        else if(heatCurrent >= 100f)
+        {
+            Instantiate(fireEffect, this.transform);
+        }
+    }
+    public void openChestNormal()
+    {
+        closeImage.SetActive(false);
+        canvasHpheat.SetActive(false);
+        openImage.SetActive(true);
+        transform.GetComponent<Rigidbody2D>().simulated = false;
+    }
+    public void openChestBurning()
+    {
+
     }
 }
