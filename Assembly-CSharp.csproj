@@ -78,6 +78,7 @@
     <Compile Include="Assets\Script\Booster\Heal_per_Second.cs" />
     <Compile Include="Assets\Script\LoginCheck.cs" />
     <Compile Include="Assets\Script\Player\CheckWay.cs" />
+    <Compile Include="Assets\Script\Player\Core.cs" />
     <Compile Include="Assets\Script\Booster\Booster_Base.cs" />
     <Compile Include="Assets\Script\PlayerControler.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\LayerTrigger.cs" />
@@ -96,8 +97,8 @@
     <Compile Include="Assets\Script\RegistryCheck.cs" />
     <Compile Include="Assets\Script\Booster\Damage.cs" />
     <Compile Include="Assets\Script\CountDown.cs" />
-    <Compile Include="Assets\Effects\Skill\CollisionDetect.cs" />
-    <Compile Include="Assets\Script\Player\Core.cs" />
+    <Compile Include="Assets\Effects\Skill\SC_CollisionDetect.cs" />
+    <Compile Include="Assets\Script\Enemy\ChestStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -22,7 +22,6 @@ public class Spawn_Chest : MonoBehaviour
         {
             listLocation.Add(item);
         }
-        //InvokeRepeating("spawnChest", 0.1f, 0.1f);
         startSpawn();
     }
     private void Update()

@@ -14,11 +14,11 @@ public class Core : MonoBehaviour
     public float damage;
     public float attackSpeed;
 
-    public void Start()
+    public void Awake()
     {
         //Set gia tri mau va mana ban dau
-        hpCurrent = hpSlider.maxValue;
-        manaCurrent = manaSlider.maxValue;
+        hpSlider.maxValue = hpCurrent;
+        manaSlider.maxValue = manaCurrent;
 
         //Hoi mau va mana tren giay
         InvokeRepeating("restorePerSecond", 0f, 1f);
@@ -37,11 +37,15 @@ public class Core : MonoBehaviour
     {
         if (hpCurrent >= hpSlider.maxValue) 
         { hpCurrent = hpSlider.maxValue; } 
+        else if(hpCurrent <= hpSlider.minValue)
+        { hpCurrent = hpSlider.minValue; }
         else 
         { hpCurrent += hpRestorePerSecond; }
 
         if (manaCurrent >= manaSlider.maxValue)
         { manaCurrent = manaSlider.maxValue; }
+        else if (manaCurrent <= manaSlider.minValue)
+        { manaCurrent = manaSlider.minValue; }
         else
         { manaCurrent += manaRestorePerSecond; }
     }
